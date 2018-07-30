@@ -2,15 +2,23 @@
   "name": "mb-logger",
   "version": "0.1.0",
   "description": "MoneyButton isomorphic logger.",
-  "main": "lib/index.js",
+  "main": "dist/mb-logger.cjs.js",
+  "module": "dist/mb-logger.esm.js",
+  "browser": "dist/mb-logger.umd.js",
+  "library": "logger",
+  "files": ["dist/**"],
   "scripts": {
     "lint": "standard --parser=babel-eslint",
     "pretest": "yarn lint",
     "test": "yarn test:mocha",
     "test:mocha": "NODE_ENV=test mocha -R progress",
-    "build": "babel src -d lib",
-    "build:watch": "babel -w src -d lib",
-    "dev": "NODE_ENV=dev yarn build:watch"
+    "build":
+      "concurrently --names 'browser,node' 'yarn build:browser' 'yarn build:node'",
+    "build:watch":
+      "concurrently --names 'browser,node' 'yarn build:browser -w' 'yarn build:node -w'",
+    "build:browser": "webpack",
+    "build:node": "rollup -c",
+    "dev": "yarn build:watch"
   },
   "repository": "https://github.com/yoursnetwork/yours",
   "author": "Yours Inc.",
@@ -18,25 +26,27 @@
   "private": true,
   "dependencies": {
     "@babel/runtime": "7.0.0-beta.47",
-    "winston": "3.0.0-rc5"
+    "loglevel": "1.6.1"
   },
   "devDependencies": {
-    "babel-eslint": "8.2.5",
     "@babel/cli": "7.0.0-beta.47",
     "@babel/core": "7.0.0-beta.47",
+    "@babel/plugin-external-helpers": "7.0.0-beta.55",
     "@babel/plugin-transform-runtime": "7.0.0-beta.47",
     "@babel/preset-env": "7.0.0-beta.47",
     "@babel/register": "7.0.0-beta.47",
+    "babel-eslint": "8.2.5",
+    "babel-loader": "8.0.0-beta.4",
+    "concurrently": "3.6.1",
     "mocha": "5.2.0",
+    "rollup": "0.63.4",
+    "rollup-plugin-babel": "4.0.0-beta.7",
     "should": "13.2.1",
-    "standard": "11.0.1"
+    "standard": "11.0.1",
+    "webpack": "4.16.3",
+    "webpack-cli": "3.1.0"
   },
   "standard": {
-    "globals": [
-      "afterEach",
-      "beforeEach",
-      "describe",
-      "it"
-    ]
+    "globals": ["afterEach", "beforeEach", "describe", "it"]
   }
 }
