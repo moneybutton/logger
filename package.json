@@ -28,7 +28,8 @@
   "private": true,
   "dependencies": {
     "@babel/runtime": "7.0.0-beta.47",
-    "loglevel": "1.6.1"
+    "loglevel": "1.6.1",
+    "mb-config": "0.1.0"
   },
   "devDependencies": {
     "@babel/cli": "7.0.0-beta.47",
