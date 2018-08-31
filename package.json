@@ -1,7 +1,7 @@
 {
   "name": "mb-logger",
   "version": "0.1.0",
-  "description": "MoneyButton isomorphic logger.",
+  "description": "Money Button isomorphic logger.",
   "main": "dist/mb-logger.cjs.js",
   "module": "dist/mb-logger.esm.js",
   "browser": "dist/mb-logger.umd.js",
