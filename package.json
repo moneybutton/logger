@@ -4,7 +4,7 @@
   "description": "Money Button isomorphic logger.",
   "main": "dist/mb-logger.cjs.js",
   "module": "dist/mb-logger.esm.js",
-  "browser": "dist/mb-logger.umd.js",
+  "unpkg": "dist/mb-logger.iife.js",
   "library": "logger",
   "files": ["dist/**"],
   "scripts": {
@@ -12,14 +12,10 @@
     "pretest": "yarn lint",
     "test": "NODE_ENV=test dotenv -e ../../.env.test -- yarn test:mocha",
     "test:mocha": "NODE_ENV=test mocha -R progress",
-    "build":
-      "concurrently --names 'browser,node' 'yarn build:browser' 'yarn build:node'",
+    "build": "rollup -c",
     "build:dev": "NODE_ENV=dev dotenv -e ../../.env.dev -- yarn build",
     "build:prod": "NODE_ENV=production dotenv -e ../../.env.prod -- yarn build",
-    "build:watch":
-      "concurrently --names 'browser,node' 'yarn build:browser -w' 'yarn build:node -w'",
-    "build:browser": "webpack",
-    "build:node": "rollup -c",
+    "build:watch": "yarn build -w",
     "dev": "NODE_ENV=dev dotenv -e ../../.env.dev -- yarn build:watch"
   },
   "repository": "https://github.com/moneybutton/yours",
@@ -39,16 +35,19 @@
     "@babel/preset-env": "7.0.0-beta.47",
     "@babel/register": "7.0.0-beta.47",
     "babel-eslint": "8.2.5",
-    "babel-loader": "8.0.0-beta.4",
     "concurrently": "3.6.1",
     "dotenv-cli": "1.4.0",
     "mocha": "5.2.0",
     "rollup": "0.63.4",
-    "rollup-plugin-babel": "4.0.0-beta.7",
+    "rollup-plugin-babel": "4.0.0-beta.8",
+    "rollup-plugin-babel-minify": "6.0.0",
+    "rollup-plugin-commonjs": "9.1.8",
+    "rollup-plugin-node-builtins": "2.1.2",
+    "rollup-plugin-node-globals": "1.4.0",
+    "rollup-plugin-node-resolve": "3.4.0",
+    "rollup-plugin-replace": "2.0.0",
     "should": "13.2.1",
-    "standard": "11.0.1",
-    "webpack": "4.16.3",
-    "webpack-cli": "3.1.0"
+    "standard": "11.0.1"
   },
   "standard": {
     "globals": ["afterEach", "beforeEach", "describe", "it"]
