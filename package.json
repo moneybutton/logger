@@ -1,10 +1,10 @@
 {
-  "name": "mb-logger",
+  "name": "@moneybutton/logger",
   "version": "0.1.0",
   "description": "Money Button isomorphic logger.",
-  "main": "dist/mb-logger.cjs.js",
-  "module": "dist/mb-logger.esm.js",
-  "unpkg": "dist/mb-logger.iife.js",
+  "main": "dist/moneybutton.logger.cjs.js",
+  "module": "dist/moneybutton.logger.esm.js",
+  "unpkg": "dist/moneybutton.logger.iife.js",
   "library": "logger",
   "files": ["dist/**"],
   "scripts": {
@@ -20,12 +20,11 @@
   },
   "repository": "https://github.com/moneybutton/yours",
   "author": "Yours Inc.",
-  "license": "UNLICENSED",
-  "private": true,
+  "license": "MIT",
   "dependencies": {
     "@babel/runtime": "7.0.0-beta.47",
     "loglevel": "1.6.1",
-    "mb-config": "0.1.0"
+    "@moneybutton/config": "0.1.0"
   },
   "devDependencies": {
     "@babel/cli": "7.0.0-beta.47",

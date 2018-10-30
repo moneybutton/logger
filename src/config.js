@@ -1,4 +1,4 @@
-import MoneyButtonConfigBuilder from 'mb-config'
+import MoneyButtonConfigBuilder from '@moneybutton/config'
 
 const config = new MoneyButtonConfigBuilder()
   .addValueWithDefault(
