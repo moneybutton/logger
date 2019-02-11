@@ -1,6 +1,6 @@
 {
   "name": "@moneybutton/logger",
-  "version": "0.21.1",
+  "version": "0.21.2",
   "description": "Money Button isomorphic logger.",
   "main": "dist/moneybutton.logger.cjs.js",
   "module": "dist/moneybutton.logger.esm.js",
@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@babel/runtime": "7.0.0",
-    "@moneybutton/config": "^0.21.1",
+    "@moneybutton/config": "^0.21.2",
     "loglevel": "1.6.1"
   },
   "devDependencies": {
