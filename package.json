@@ -24,7 +24,7 @@
   },
   "repository": "https://github.com/moneybutton/logger",
   "author": "Yours Inc.",
-  "license": "MIT",
+  "license": "BSV",
   "publishConfig": {
     "access": "public"
   },
